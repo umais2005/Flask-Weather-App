@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{%block content%}
+    <div class="weather-container">
+        <h1>Weather Statistics</h1>
+        {% if stats %}
+            <ul class="weather-stats">
+                {% for name , metric in stats %}
+                    <li><strong>{{ name }}</strong>{{metric}}</li>
+                {% endfor%}
+            </ul>
+        {% else %}
+            <div class="error-message">
+                <p>City Not Found</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content%}
